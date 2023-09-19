@@ -22,7 +22,7 @@ private:
     LoopQueue<int> buckets;
 };
 
-TradesNumberMonitor(const std::vector<int> &periods, const std::vector<int> &thresholds)
+TradesNumberMonitor::TradesNumberMonitor(const std::vector<int> &periods, const std::vector<int> &thresholds)
     : periods(periods), thresholds(thresholds), maxPeriod(periods[0]),
       buckets(maxPeriod), sums(periods.size()) {}
 }
