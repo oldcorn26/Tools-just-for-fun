@@ -1,6 +1,6 @@
 #pragma once
 #include <vector>
-#include "LoopQueue.h"
+#include "loop_queue.h"
 
 /*
  * TradesNumberMonitor class is used for monitoring trades number.
@@ -44,15 +44,9 @@ void TradesNumberMonitor::add(int trades) {
 }
 
 int TradesNumberMonitor::peakSum(size_t idx) {
-    if (idx >= sums.size()) {
-        throw std::out_of_range("Index out of range");
-    }
     return sums[idx];
 }
 
 bool TradesNumberMonitor::checkIfAlert(size_t idx) {
-    if (idx >= thresholds.size()) {
-        throw std::out_of_range("Index out of range");
-    }
     return sums[idx] >= thresholds[idx];
 }
